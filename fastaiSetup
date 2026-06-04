@@ -1,0 +1,14 @@
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+
+
+bash Miniforge3-$(uname)-$(uname -m).sh
+
+mamba init
+mamba create --name fastaiEnv
+mamba activate fastaiEnv jupyterlab ipython ipywidgets sentencepiece
+
+
+mamba install pytorch::pytorch pytorch::torchvision pytorch::torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+
+mamba install fastai::fastai
+mamba install -c fastai fastbook
