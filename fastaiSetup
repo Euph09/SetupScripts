@@ -7,8 +7,9 @@ mamba init
 mamba create --name fastaiEnv jupyterlab ipython ipywidgets sentencepiece
 mamba activate fastaiEnv 
 
-
-mamba install pytorch::pytorch pytorch::torchvision pytorch::torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+#Uncomment one below: 1 for NVIDIA GPU 2 for just CPU
+#mamba install pytorch::pytorch pytorch::torchvision pytorch::torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+#mamba install pytorch torchvision torchaudio cpuonly -c pytorch
 
 mamba install fastai::fastai
 mamba install -c fastai fastbook
